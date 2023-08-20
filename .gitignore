@@ -1,0 +1,8 @@
+.idea
+pb_gen
+*.exe
+*.log
+go.sum
+*.zip
+code-generator
+v2

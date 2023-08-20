@@ -1,0 +1,25 @@
+syntax = "proto3";
+option go_package = "./v1/nlp_service";
+
+service TextClassifier {
+  rpc Analyse (AnalyseRequest) returns (AnalyseReply) {}
+}
+
+message AnalyseRequest {
+  string content = 1;
+  string requestId = 2;
+}
+
+message AnalyseReply {
+  string label = 1;
+
+  enum ContentType {
+    NORMAL = 0;         // 正常
+    ADVERTISEMENT = 1;  // 广告
+    ABUSIVE = 2;        // 辱骂
+    PORN = 3;           // 色情
+  }
+
+  ContentType type = 2;
+  string requestId = 3;
+}
