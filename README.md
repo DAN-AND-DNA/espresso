@@ -1,7 +1,7 @@
-# 简单服务框架
+# 简单模块化服务框架
 
 ## 协议生成
-1. 下载协议，放置pb目录
+1. 下载 协议，放置pb目录
 2. 创建pb_gen目录
 ```bash
 protoc --go_out=./pb_gen  --go-grpc_out=./pb_gen  pb/*.proto
@@ -23,11 +23,12 @@ protoc --go_out=./pb_gen  --go-grpc_out=./pb_gen  pb/*.proto
 2. 词库相关配置：[__output](__output)
 
 ### 例子
-1. 接口形式的模块: 参考[nlp](modules%2Fnlp)模块（只暴露接口，不对外公开实现细节）
-2. mvc形式模块: 参考[cache](modules%2Fcache)模块（只在model里写业务逻辑，controller作为网络消息处理）
-3. 事件处理模块: 参考[metric](modules%2Fmetric)模块 （controller作为事件处理）
-4. 压力测试：参考[e2etest](cmd%2Fe2etest)
-5. 定时器: [时间格式](https://pkg.go.dev/github.com/robfig/cron/v3)跟crontab一样，例子参考[model.go](modules%2Fanalyzer%2Finternal%2Fmodel.go)
+1. 简单例子 [echo](examples%2Fecho)
+2. 接口形式的模块: 参考[nlp](modules%2Fnlp)模块（只暴露接口，不对外公开实现细节） 
+3. mvc形式模块: 参考[cache](modules%2Fcache)模块（只在model里写业务逻辑，controller作为网络消息处理） 
+4. 事件处理模块: 参考[metric](modules%2Fmetric)模块 （controller作为事件处理） 
+5. 压力测试：参考[e2etest](cmd%2Fe2etest)
+6. 定时器: [时间格式](https://pkg.go.dev/github.com/robfig/cron/v3)跟crontab一样，例子参考[model.go](modules%2Fanalyzer%2Finternal%2Fmodel.go)
 
 ## 简单测试
 1. 启动 [python文本分类服务](http://192.168.4.210/dmm-backend/easy-text-classifier)
